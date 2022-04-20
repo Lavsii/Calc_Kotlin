@@ -5,11 +5,17 @@ import android.os.Bundle
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
+import com.example.calckotlin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    
+    private lateinit var binding: MainActivityBinding
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = MainActivityBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         btn_0.setOnClickListener { setTextFields("0") }
         btn_1.setOnClickListener { setTextFields("1") }
